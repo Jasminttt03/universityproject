@@ -74,7 +74,7 @@ window.addEventListener("DOMContentLoaded", () => {
       selectedType === "All" ||
       univ.type.toLowerCase() === selectedType.toLowerCase();
 
-    // ✅ Search keyword only matches the university type
+    //Search keyword only matches the university type
     const keywordMatch =
       searchKeyword === "" ||
       univ.type.toLowerCase() === searchKeyword;
@@ -115,7 +115,7 @@ window.addEventListener("DOMContentLoaded", () => {
     universityList.appendChild(card);
   });
 
-  // ✅ Add or remove single-card class based on count
+  // Add or remove single-card class based on count
   const cards = universityList.querySelectorAll(".university-card");
   if (cards.length === 1) {
     universityList.classList.add("single-card");
@@ -123,7 +123,7 @@ window.addEventListener("DOMContentLoaded", () => {
     universityList.classList.remove("single-card");
   }
 
-  // ✅ Scroll reveal animation
+  // Scroll reveal animation
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
