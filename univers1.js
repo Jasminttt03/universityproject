@@ -56,28 +56,38 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
   // Filter handler
-  function applyFilters() {
+function applyFilters() {
   const selectedRegion = regionSelect.value;
   const selectedType = typeSelect.value;
   const searchKeyword = searchInput.value.trim().toLowerCase();
 
+  const knownTypes = ["national", "private", "specialized", "international"];
+
   const filtered = universities.filter(univ => {
-    // Region filter (dropdown)
+    // Dropdown filters
     const regionMatch =
       selectedRegion === "All" ||
       (Array.isArray(univ.region)
         ? univ.region.includes(selectedRegion)
         : univ.region === selectedRegion);
 
-    // Type filter (dropdown)
     const typeMatch =
       selectedType === "All" ||
       univ.type.toLowerCase() === selectedType.toLowerCase();
 
-    //Search keyword only matches the university type
+    // Keyword logic
+    const keywordIsType = knownTypes.includes(searchKeyword);
+    const typeExactMatch = univ.type.toLowerCase() === searchKeyword;
+    const nameMatch = univ.name.toLowerCase().includes(searchKeyword);
+    const regionMatchByKeyword = univ.region
+      .toString()
+      .toLowerCase()
+      .includes(searchKeyword);
+
+    // Keyword matches only type if keyword is a known type
     const keywordMatch =
       searchKeyword === "" ||
-      univ.type.toLowerCase() === searchKeyword;
+      (keywordIsType ? typeExactMatch : nameMatch || regionMatchByKeyword);
 
     return regionMatch && typeMatch && keywordMatch;
   });
