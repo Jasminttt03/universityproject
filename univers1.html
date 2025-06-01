@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Universities in Korea</title>
+  <link rel="stylesheet" href="univers1.css" />
+</head>
+<body>
+
+  <div id="role-modal" class="modal-overlay">
+    <div class="modal-content">
+      <h2>Welcome! Please select your role:</h2>
+      <div class="role-options">
+        <label>
+          <input type="radio" name="userRole" value="Student" required> Student
+        </label>
+        <label>
+          <input type="radio" name="userRole" value="Parents"> Parents
+        </label>
+        <label>
+          <input type="radio" name="userRole" value="Teacher"> Teacher
+        </label>
+        <label>
+          <input type="radio" name="userRole" value="Researcher"> Researcher
+        </label>
+      </div>
+      <button id="submit-role-button">Continue</button>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <header class="main-header">
+    <h1>Universities in Korea</h1>
+    <p class="subtitle">Explore and compare universities across Korea</p>
+  </header>
+
+  <!-- Slideshow Section -->
+  <div class="slideshow-container fade-on-scroll">
+    <div class="slide active"><img src="images/slide7.jpg" alt="Slide 1" /></div>
+    <div class="slide"><img src="images/slide2.jpg" alt="Slide 2" /></div>
+    <div class="slide"><img src="images/slide5.jpg" alt="Slide 3" /></div>
+  </div>
+
+  <!-- Search Filter Section -->
+  <section class="search-panel">
+    <label for="region-select">Region</label>
+    <select id="region-select">
+      <option value="All">All</option>
+      <option value="Seoul">Seoul</option>
+      <option value="Busan">Busan</option>
+      <option value="Daegu">Daegu</option>
+      <option value="Daejeon">Daejeon</option>
+      <option value="Incheon">Incheon</option>
+      <option value="Suwon">Suwon</option>
+      <option value="Gwangju">Gwangju</option>
+      <option value="Ulsan">Ulsan</option>
+      <option value="Jeju">Jeju</option>
+    </select>
+
+    <label for="type-select">Type</label>
+    <select id="type-select">
+      <option value="All">All</option>
+      <option value="National">National</option>
+      <option value="Private">Private</option>
+      <option value="Specialized">Specialized</option>
+      <option value="International">International</option>
+    </select>
+
+    <input type="text" id="search-input" placeholder="Search university name..." />
+    <button id="search-button">Search</button>
+  </section>
+
+  <!-- Optional University List Section -->
+  <section id="university-list"></section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Universities in Korea. All rights reserved.</p>
+    <p>
+      Contact: <a href="https://english.moe.go.kr" target="_blank">Ministry of Education, Republic of Korea</a>
+    </p>
+    <p class="footer-note">This site is for informational purposes only.</p>
+  </footer>
+
+  <!-- Slideshow Script -->
+  <script>
+  // Slideshow
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      slide.style.left = i === index ? "0" : "100%";
+    });
+    slides[index].classList.add('active');
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  setInterval(nextSlide, 3000);
+
+  // Scroll fade-in
+  const fadeSection = document.querySelector('.fade-on-scroll');
+
+  function handleScrollFade() {
+    const rect = fadeSection.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      fadeSection.classList.add('visible');
+      window.removeEventListener('scroll', handleScrollFade);
+    }
+  }
+
+  window.addEventListener('scroll', handleScrollFade);
+  handleScrollFade();
+</script>
+
+
+  <script src="data.js"></script>
+  <script src="univers1.js"></script>
+
+</body>
+</html>

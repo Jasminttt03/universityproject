@@ -1,0 +1,25 @@
+body.detail-page{
+    background: none;
+    background-color: #f5f5f5;
+}
+
+.detail-container h1,
+.detail-container img {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.detail-container img {
+  max-width: 150px;
+  margin-bottom: 1rem;
+}
+
+#university-detail {
+    /* text-align: center; */
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
