@@ -322,7 +322,100 @@ const universities = [
   },
   ranking: 45,
   mapQuery: "Keimyung University, Daegu"  
+  },
+
+   {
+    id: "kkk",
+    name: "Konkuk University",
+    type: "Private",
+    region: "Seoul",
+    image: "kkk.png",
+    description: "Konkuk University is a private university founded in South Korea in 1931. Konkuk University is known for its veterinary and art colleges at the Seoul campus. It has two campuses: one in Seoul and one in Chungju. The Seoul campus is located near the Han River, by the Konkuk University Station (subway line no.2).",
+    contact: {phone: "+82-2-2049-6212 ", email: "abroad@konkuk.ac.kr", website: "https://konkuk.ac.kr/"
+  },
+  ranking: 22,
+  mapQuery: "Konkuk University, Seoul"  
+  },
+
+   {
+    id: "jbnu",
+    name: "Jeonbuk National University",
+    type: "National",
+    region: "Jeonju",
+    image: "jbnu.jpg",
+    description: "Jeonbuk National University is one of ten Flagship Korean National Universities founded in 1947, located in Jeonju, South Korea. Jeonbuk National University has been ranked 551–560th in the world by QS Top Universities Ranking in 2023.",
+    contact: {phone: "+82-63-270-4653 ", email: "admissionu@jbnu.ac.kr", website: "http://jbnu.ac.kr/eng"
+  },
+  ranking: 18,
+  mapQuery: "Jeonbuk National University, Jeonju"  
+  },
+
+   {
+    id: "cnu1",
+    name: "Chonnam National University",
+    type: "National",
+    region: "Gwangju",
+    image: "cnu1.png",
+    description: "Chonnam National University is one of ten Flagship Korean National Universities located in Gwangju and South Jeolla Province, South Korea. CNU ranked the 10th nationwide and the 420th worldwide in world university rankings in the CWUR (Center for World University Rankings).",
+    contact: {phone: "+82 62-530-1278 ", email: "underia@jnu.ac.kr", website: "https://www.jnu.ac.kr/"
+  },
+  ranking: 19,
+  mapQuery: "Chonnam National University, Gwangju"  
+  },
+
+   {
+    id: "cbnu",
+    name: "Chungbuk National University",
+    type: "National",
+    region: "Cheongju",
+    image: "cbnu.png",
+    description: "Chungbuk National University (CBNU), a flagship national university in South Korea, emphasizes its role in nurturing talent and contributing to both regional and national development. CBNU prioritizes student support, innovative research, and industry-university collaborations, aiming to be a harmonious and balanced university. ",
+    contact: {phone: "+82-43-261-3841 ", email: "minhakim@chungbuk.ac.kr", website: "https://www.cbnu.ac.kr/english/index.do"
+  },
+  ranking: 31,
+  mapQuery: "Chungbuk National University, Cheongju"  
+  },
+
+   {
+    id: "gnu",
+    name: "Gyeongsang National University",
+    type: "National",
+    region: "Jinju",
+    image: "gnu.jpg",
+    description: "Gyeongsang National University  is one of ten Flagship Korean National Universities located in Jinju, South Gyeongsang Province. Gyeongsang National University has twelve colleges such as arts, social science, natural science, engineering, agriculture and life science, management, veterinary, education, nursing, and medicine, and eight graduate schools such as medicine and public health, business administration, education, aerospace, industry, etc",
+    contact: {phone: "+82-55-772-0276 ", email: "gognu@gnu.ac.kr ", website: "http://eng.gnu.ac.kr/"
+  },
+  ranking: 26,
+  mapQuery: "Gyeongsang National University, Jinju"  
+  },
+
+  {
+    id: "knu1",
+    name: "Kangwon National University",
+    type: "National",
+    region: "Chuncheon",
+    image: "knu1.jpg",
+    description: "Kangwon National University is one of ten Flagship Korean National Universities in Gangwon, South Korea. Initially established as an agricultural college, Kangwon National University has steadily expanded to the comprehensive university encompassing a full spectrum of academic fields.",
+    contact: {phone: " +82-33-250-6985, 7615 ", email: "enter@kangwon.ac.kr", website: "https://wwwk.kangwon.ac.kr/english/index.do"
+  },
+  ranking: 32,
+  mapQuery: "Kangwon National University, Chuncheon"  
+  },
+
+{
+    id: "ewu",
+    name: "Ewha Womans University",
+    type: "Private",
+    region: "Seoul",
+    image: "ewu.png",
+    description: "Ewha Womans University is a private women's research university in Seoul, South Korea. Currently, Ewha Womans University is one of the world's largest female educational institutes and one of the most prestigious universities in South Korea. Ewha Womans University has produced numerous South Korean women leaders, including politicians, CEOs, and legal professionals.",
+    contact: {phone: "+82-2-3277-3818 ", email: "isadmit@ewha.ac.kr", website: "http://www.ewha.ac.kr/"
+  },
+  ranking: 16,
+  mapQuery: "Ewha Womans University, Seoul"  
   }
+
+
 
 
 
