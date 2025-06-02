@@ -95,9 +95,6 @@ function applyFilters() {
   renderUniversityCards(filtered);
 }
 
-
-
-
   // Render cards
   function renderUniversityCards(list) {
   universityList.innerHTML = "";
@@ -160,3 +157,20 @@ function applyFilters() {
     if (e.key === "Enter") applyFilters();
   });
 });
+
+// Dark/Light mode toggle
+const modeToggle = document.getElementById("modeToggle");
+
+// Load saved mode
+if (localStorage.getItem("mode") === "dark") {
+  document.body.classList.add("dark-mode");
+  modeToggle.textContent = "☀️Light Mode";
+}
+
+modeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  const isDark = document.body.classList.contains("dark-mode");
+  modeToggle.textContent = isDark ? "☀️Light Mode" : "🌙Dark Mode";
+  localStorage.setItem("mode", isDark ? "dark" : "light");
+});
+

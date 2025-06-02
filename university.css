@@ -23,3 +23,44 @@ body.detail-page{
     font-weight: bolder;
 }
 
+/* Light mode default */
+body {
+  background-color: #ffffff;
+  color: #111;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark-mode .container,
+body.dark-mode .university-details {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+}
+
+body.dark-mode a {
+  color: #f1c40f;
+}
+
+body.dark-mode .mode-toggle {
+  background: lightgoldenrodyellow;
+  color: black;
+}
+
+

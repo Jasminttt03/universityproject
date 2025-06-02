@@ -346,3 +346,44 @@ footer a:hover {
   color: #bbb;
   margin-top: 0.3rem;
 }
+
+/* Default Light Mode */
+body {
+  background-color: #ffffff;
+  color: #111;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark-mode .university-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+}
+
+body.dark-mode .filter-section {
+  background-color: #1f1f1f;
+  border-color: #444;
+}
+
+body.dark-mode .mode-toggle {
+  background: lightgoldenrodyellow;
+  color: black;
+}
+
