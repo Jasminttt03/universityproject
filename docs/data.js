@@ -4,7 +4,7 @@ const universities = [
     name: "Seoul National University",
     type: "National",
     region: "Seoul",
-    image: "images/snu.png",
+    image: "snu.png",
     description: "South Korea's top national university known for excellence in research and education.",
     contact: {phone: "+82-2-880-6971 ", email: "snuadmit@snu.ac.kr", website: "https://www.snu.ac.kr"
     },
