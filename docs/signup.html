@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="univers1.css" />
+  <style>
+    .form-container {
+      max-width: 500px;
+      margin: 80px auto;
+      padding: 40px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    .form-group button {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .form-group button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Create Account</h2>
+    <form id="signupForm">
+      <div class="form-group">
+        <label for="userId">User ID</label>
+        <input type="text" id="userId" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" required />
+        <div id="passwordError" class="error"></div>
+      </div>
+      <div class="form-group">
+        <label for="birthday">Birthday</label>
+        <input type="date" id="birthday" required />
+      </div>
+      <div class="form-group">
+        <label for="status">Education Status</label>
+        <select id="status" required>
+          <option value="">Select</option>
+          <option value="Elementary">Elementary School</option>
+          <option value="Junior">Middle School</option>
+          <option value="High">High School</option>
+          <option value="College/University">College/ University</option>
+          <option value="Graduate">Master/PhD</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nationality">Nationality</label>
+        <input type="text" id="nationality" required />
+      </div>
+      <div class="form-group">
+        <button type="submit">Sign Up</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    const form = document.getElementById('signupForm');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirmPassword');
+    const passwordError = document.getElementById('passwordError');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (password.value !== confirmPassword.value) {
+        passwordError.textContent = "Passwords do not match.";
+        return;
+      }
+
+      const userData = {
+        id: document.getElementById('userId').value,
+        email: document.getElementById('email').value,
+        password: password.value,
+        birthday: document.getElementById('birthday').value,
+        status: document.getElementById('status').value,
+        nationality: document.getElementById('nationality').value
+      };
+
+      localStorage.setItem(userData.email, JSON.stringify(userData));
+      alert('Signup successful! You can now login.');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
