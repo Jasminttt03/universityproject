@@ -8,7 +8,7 @@ const university = universities.find(u => u.id === universityId);
 if (university) {
   container.innerHTML = `
     <h1>${university.name}</h1>
-    <img src="${university.image}" alt="${university.name} logo" />
+    <img src="images/${university.image}" alt="${university.name} logo" />
     <p><strong>Region:</strong> ${university.region}</p>
     <p><strong>Type:</strong> ${university.type}</p>
     <p><strong>Ranking:</strong> #${university.ranking} in Korea</p>
@@ -26,19 +26,4 @@ if (university) {
 } else {
   container.innerHTML = "<p>University not found.</p>";
 }
-
-// Dark/Light mode toggle
-const modeToggle = document.getElementById("modeToggle");
-
-if (localStorage.getItem("mode") === "dark") {
-  document.body.classList.add("dark-mode");
-  modeToggle.textContent = "☀️Light Mode";
-}
-
-modeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  const isDark = document.body.classList.contains("dark-mode");
-  modeToggle.textContent = isDark ? "☀️Light Mode" : "🌙Dark Mode";
-  localStorage.setItem("mode", isDark ? "dark" : "light");
-});
 
