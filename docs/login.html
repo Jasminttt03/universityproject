@@ -1,0 +1,73 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .login-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .login-box input, .login-box button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 15px;
+      border: 1px solid #cccccc;
+    }
+
+    .login-box button:hover{
+        background-color: #007bff;
+        cursor: pointer;
+    }
+    .error {
+      color: red;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2 style="color:blue;">Log In</h2>
+    <input type="email" id="login-email" placeholder="Email" required />
+    <input type="password" id="login-password" placeholder="Password" required />
+    <p id="login-error" class="error"></p>
+    <button onclick="loginUser()">Log In</button>
+  </div>
+
+  <script>
+    function loginUser() {
+      const email = document.getElementById("login-email").value;
+      const password = document.getElementById("login-password").value;
+      const storedUser = JSON.parse(localStorage.getItem(email));
+
+      const errorMsg = document.getElementById("login-error");
+
+        if (storedUser && storedUser.password === password) {
+        localStorage.setItem("loggedInUser", storedUser.email);
+        alert("Welcome back, " + storedUser.id + "!");
+        window.location.href = "univers1.html";
+      }
+
+    }
+  </script>
+</body>
+</html>
