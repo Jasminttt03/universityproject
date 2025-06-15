@@ -1,71 +1,229 @@
-/* Basic reset */
-html, body {
+/* Basic Reset */
+* {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  box-sizing: border-box;
 }
 
-/* Header Section */
-.main-header {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #111;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 50px;
+  height: 120px;
+  background-color: #003366;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-heading h1 {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 12px #111;
+}
+
+.brand-heading .subtitle{
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: -4px;
+  letter-spacing: 0.5px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.mode-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.mode-btn:hover {
+  background-color: #0056b3;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #003366;
+    margin-top: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Full-width Slideshow */
+.custom-slideshow {
+  position: relative;
+  width: 100vw;
+  height: 400px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.custom-slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease;
+}
+
+.custom-slide.active {
+  display: block;
+}
+
+.slide-prev, .slide-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 4px;
+}
+
+.slide-prev { left: 10px; }
+.slide-next { right: 10px; }
+
+.slide-dots {
   text-align: center;
-  padding: 2rem 1rem 1rem;
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+  z-index: 2;
+}
+
+.slide-dots .dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slide-dots .dot.active {
+  background-color: white;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode .university-card{
+  background-color: white !important;
+  color: #111 !important;
+  border: none !important;
+}
+
+body.dark-mode .university-card h3,
+body.dark-mode .university-card p{
+  color: #111 !important;
+}
+
+body.dark-mode .card-body h3,
+body.dark-mode .card-body p{
+  color: #f0f0f0;
+}
+
+body.dark-mode .navbar {
   background-color: #003366;
   color: white;
 }
 
-.main-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+body.dark-mode .navbar .nav-links a,
+body.dark-mode .navbar h1 {
+  color: white;
 }
 
-.subtitle {
-  font-size: 1.25rem;
-  margin: 0;
+body.dark-mode .mode-btn {
+  background-color: #444;
+  color: #f0f0f0;
 }
 
-/* Slideshow Section */
-.slideshow-container {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  background-color: #ccc;
+body.dark-mode .mode-btn:hover {
+  background-color: #666;
 }
 
-.slide {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: all 1s ease-in-out;
-  z-index: 0;
-}
-
-.slide.active {
-  left: 0;
-  opacity: 1;
-  z-index: 1;
-}
-
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.fade-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.fade-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
+body.dark-mode .search-panel label{
+  color: #111 !important;
 }
 
 .modal-overlay {
@@ -170,7 +328,7 @@ html, body {
 }
 
 .search-panel label {
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .search-panel input,
@@ -178,7 +336,7 @@ html, body {
 .search-panel button {
   padding: 0.5rem;
   font-size: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
   border: 1px solid #ccc;
   background-color: rgba(255, 255, 255, 0.9);
   color: #000;
@@ -345,45 +503,5 @@ footer a:hover {
   font-size: 0.7rem;
   color: #bbb;
   margin-top: 0.3rem;
-}
-
-/* Default Light Mode */
-body {
-  background-color: #ffffff;
-  color: #111;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.mode-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 0.5rem 1rem;
-  border: none;
-  background: #007bff;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  z-index: 999;
-}
-
-body.dark-mode {
-  background-color: #121212;
-  color: #eee;
-}
-
-body.dark-mode .university-card {
-  background-color: #1e1e1e;
-  border: 1px solid #333;
-}
-
-body.dark-mode .filter-section {
-  background-color: #1f1f1f;
-  border-color: #444;
-}
-
-body.dark-mode .mode-toggle {
-  background: lightgoldenrodyellow;
-  color: black;
 }
 
