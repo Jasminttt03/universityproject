@@ -8,7 +8,7 @@ const university = universities.find(u => u.id === universityId);
 if (university) {
   container.innerHTML = `
     <h1>${university.name}</h1>
-    <img src="images/${university.image}" alt="${university.name} logo" />
+    <img src="${university.image}" alt="${university.name} logo" />
     <p><strong>Region:</strong> ${university.region}</p>
     <p><strong>Type:</strong> ${university.type}</p>
     <p><strong>Ranking:</strong> #${university.ranking} in Korea</p>
