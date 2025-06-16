@@ -97,18 +97,17 @@ body {
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;
-  }
-
   .nav-links {
     display: none;
     flex-direction: column;
-    width: 100%;
     background-color: #003366;
-    margin-top: 10px;
+    width: 100%;
+    position: absolute;
+    top: 80px; /* Adjust to height of navbar */
+    left: 0;
+    padding: 1rem;
+    z-index: 1000;
   }
-
   .nav-links.active {
     display: flex;
   }
