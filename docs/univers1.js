@@ -78,7 +78,7 @@ window.addEventListener("DOMContentLoaded", () => {
       card.className = "university-card";
       card.innerHTML = `
         <div class="card-logo">
-          <img src="images/${univ.image}" alt="${univ.name}" />
+          <img src="${univ.image}" alt="${univ.name}" />
         </div>
         <div class="card-body">
           <h3>${univ.name}</h3>
